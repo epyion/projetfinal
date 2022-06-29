@@ -1,6 +1,7 @@
 <?php
     require_once '../include/bdd.php';
 
+
     if(isset($_POST['pseudo_user']) && isset($_POST['nom_user']) && isset($_POST['prenom_user']) && isset($_POST['email_user']) && isset($_POST['ddn_user']) && isset($_POST['mdp_user']))
     {
         $pseudo = htmlspecialchars($_POST['pseudo_user']);
@@ -10,19 +11,28 @@
         $ddn = ($_POST['ddn_user']);
         $password = htmlspecialchars($_POST['mdp_user']);
         $date = date ('Y-m-d', time());
+
+
+        
         $check = $bdd->prepare('SELECT pseudo_user, nom_user, prenom_user, email_user, ddn_user, mdp_user  FROM user WHERE pseudo_user =?');
         $check->execute(array($pseudo));
         $data = $check->fetch();
         $row = $check->rowCount();
         $majuscule = preg_match('(?=.{1,}[A-Z])', $_POST['mdp_user']);
-        $chiffre = preg_match('@[0-9.]@', $_POST['mdp_user']);
+        $chiffre = preg_match('(?=.{1,}[0-9.])', $_POST['mdp_user']);
 
-        if($majuscule == 0) {
-            echo 'mettre une majuscule dans le mot de passe';
-        }
-        if($chiffre == 0) {
-            echo 'mettre un chiffre dans le mot de passe';
-        }
+        // if($majuscule == 0) {
+        //     echo 'mettre une majuscule dans le mot de passe';
+        // }
+        // else {
+
+        // }
+        // if($chiffre == 0) {
+        //     echo 'mettre un chiffre dans le mot de passe';
+        // }
+        // else {
+
+        // }
         if($row == 0)
         {
             if(strlen($pseudo) <= 100)
@@ -45,12 +55,12 @@
                                 'ddn_user' => $ddn,
                                 'ddi_user' => $date
                             ));
-                        header('location:php/connexion?reg_err=success');
+                        header('location:../php/connexion?reg_err=success');
                 }
                 else {
                     echo $_POST['mdp_user'] ; echo "<br>";
                     echo $_POST['mdp_user2'];
-                    // header('location:php/connexion?reg_err=mdpfaux');
+                    // header('location:../php/connexion?reg_err=mdpfaux');
                     }
                 }else header('location:inscription.php');
             }else header('location:inscription.php?reg_err=pseudo_length');

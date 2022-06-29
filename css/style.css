@@ -50,7 +50,9 @@ h1{
     background-repeat: no-repeat;
 }
 p {
+    display: flex;
     text-align: center;
+    justify-content: space-around;
 }
 
 

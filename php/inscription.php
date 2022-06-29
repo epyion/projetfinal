@@ -47,7 +47,7 @@
             </p>
          
          
-            <p><input type="submit"  value="S'inscrire"class="btn btn-outline-dark"></p>
+            <p><input type="submit"  value="S'inscrire" class="btn btn-outline-dark"><a href="../log.php"><button class="btn btn-outline-dark">retour</button></a></p>
             <p><a href="connexion.php">si vous avez deja  un compte</a></p>
         </form>
                 </div>
