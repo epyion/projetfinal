@@ -11,7 +11,7 @@
     <title>log</title>
 </head>
 <body>
-    <div class="header">
+    <div class="headerr">
     <!-- Button -->
     <a href="php/connexion.php">
     <button class="btn btn-outline-dark">connexion</button>

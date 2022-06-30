@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+
 ?>
 <!DOCTYPE html>
 
@@ -14,10 +16,13 @@ session_start();
     <title>Document</title>
 </head>
 <body>
+<?php    include './include/nav-bar.php' ?>
     <div class="bann">
         <div class="one"></div>
         <div class="two"></div>
         <div class="three"></div>
     </div>
+
+
 </body>
 </html>

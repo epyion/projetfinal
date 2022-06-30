@@ -2,8 +2,9 @@
     padding: 0;
     margin:0;
     box-sizing: border-box;
+    font-family: 'BIZ UDPMincho', serif;
 }
-.header {
+.headerr {
     display: flex;
     height: 80px;
     background-color: aqua;
@@ -62,4 +63,19 @@ p {
     opacity: 0.9;
     border-radius: 40px;
     width: 400px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    color: #e74c3c;
+}
+a.nav-link {
+    text-decoration: none;
+    color: black;
+}
+a.nav-link:hover {
+    color: #e74c3c;
 }
