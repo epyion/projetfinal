@@ -17,22 +17,33 @@
 .bann {
     width: 100%;
     display: flex;
+    /* justify-content: center;
+    align-items: center; */
     height: 800px;
-    background-color: blue;
+    background-color: black;
+
 
 }
 .one {
-    width: 33%;
-    background-image: url(../img/bleach-bann.png);
+    width: 50%;
+    background-image: url(../img/boutique.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    
 }
 .two {
-    width: 34%;
-    background-image: url(../img/dragon-ball-bann.png);
+    width: 50%;
+    background-image: url(../img/figurine.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+
 }
-.three {
+/* .three {
     width: 33%;
     background-image: url(../img/one-piece-bann.png);
-}
+} */
 h1{
     display: flex;
     height: 90px;

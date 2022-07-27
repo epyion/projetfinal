@@ -22,9 +22,9 @@
     </a>
     </div>
     <div class="bann">
-    <div class="one"></div>
+    <div class="one" ></div>
     <div class="two"></div>
-    <div class="three"></div>
+ <!--   <div class="three"></div> -->
     </div>
     <h1 class="text-center text-light bg-dark"> Tous vos Anime, Goodies, manga, et bien d autre sont sur ANIME-PROJECT</h1>
 

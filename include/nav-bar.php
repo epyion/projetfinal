@@ -10,6 +10,9 @@ include 'include/bdd.php'
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
     <title>Document</title>
 <?php 
     $sql = "SELECT * FROM user u, possede p, role r 
