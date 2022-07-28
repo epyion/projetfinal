@@ -69,7 +69,7 @@ include 'include/bdd.php'
   <?php } ?>
 
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Mon Espace</a></li>
+            <li><a class="dropdown-item" href="php/page_membre.php">Mon Espace</a></li>
             <?php
 
             if ($row["id_role"] == 2) {

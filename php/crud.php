@@ -16,9 +16,12 @@ include '../include/bdd.php';
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	
 	<style>
 		body {
 			color: #566787;
@@ -362,14 +365,15 @@ include '../include/bdd.php';
 						</tr>
 					</thead>
 
+						<tbody>
 
 					<?php
 					while ($row = $requete->fetch()) {
+
 					?>
-						<tbody>
 							<tr>
 
-								<th><?php echo $row['id_user'] ?></th>
+								<td><?php echo $row['id_user'] ?></t>
 								<td><?php echo $row['pseudo_user'] ?></td>
 								<td><?php echo $row['nom_user'] ?></td>
 								<td><?php echo $row['prenom_user'] ?></td>
@@ -381,7 +385,7 @@ include '../include/bdd.php';
 								<td><?php echo $row['ddi_user'] ?></td>
 								<td><?php echo $row['nom_role'] ?></td>
 								<td><a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-									<a href="#deleteMembre" class="delete" data-user=<?php echo $row['id_user'] ?>  data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+									<a onclick="setDeleteId(event)" href="#deleteMembre" class="delete" id='<?php echo $row['id_user'] ?>'  data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
 								</td>
 							</tr>
 						</tbody>
@@ -462,18 +466,18 @@ include '../include/bdd.php';
 	<div id="deleteMembre" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form>
+				<form id="confirmDelete">
 					<div class="modal-header">
 						<h4 class="modal-title">Delete membre</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
 					<div class="modal-body">
 						<p>Etes vous sur de vouloir supprimer ce membre?</p>
-						<p class="text-warning"><small></small></p>
+						<p class="text-warning"></p>
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-						<input type="submit" class="btn btn-danger" value="supprimer">
+						<input type="submit" class="btn btn-danger"  value="supprimer">
 
 					</div>
 				</form>
@@ -484,33 +488,46 @@ include '../include/bdd.php';
 	<script>
 		$(function() {
 
+			$('form#confirmDelete').on(
+				'submit',
+				function(e) {
+					$.ajax({
+						url: '../traitement/delete_membre.php',
+						type: 'POST',
+						data: {
+							id: Id_delete
+						},
+						success: function(data) {
+							$('#deleteMembre').modal('hide');
+						}
+					});
+					
+					e.preventDefault();
 
+				});
+				
 			$('#deleteMembre').on('show.bs.modal', function(event) {
 
 				var button = $(event.relatedTarget)
 				var id = button.data('user')
 
-				$('form').on(
-					'submit',
-					function(e) {
-						$.ajax({
-							url: '../traitement/delete_membre.php',
-							type: 'POST',
-							data: {
-								id: id
-							},
-							success: function(data) {
-							
-								// location.reload();
-							}
-						});
-						e.preventDefault();
-
-					});
 			})
 
 
 		});
+
+		var Id_delete = -1;
+
+		function setDeleteId(event){
+			Id_delete = event.target.parentNode.id;
+			console.log(Id_delete)
+			Id_delete.style.transition = "opacity 0.2s";
+			Id_delete.style.opacity = "0";
+		}
+		setTimeout(function() {
+  		Id_delete.style.display = "none";
+		}, 200);
+
 	</script>
 
 

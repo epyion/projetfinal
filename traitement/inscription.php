@@ -55,6 +55,9 @@
                                 'ddn_user' => $ddn,
                                 'ddi_user' => $date
                             ));
+                            
+                           
+
                         header('location:../php/connexion?reg_err=success');
                 }
                 else {
