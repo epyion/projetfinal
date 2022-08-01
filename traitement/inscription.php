@@ -54,8 +54,21 @@
                                 'mdp_user' => $password2,
                                 'ddn_user' => $ddn,
                                 'ddi_user' => $date
+                                 
                             ));
-                            
+
+                            $select = $bdd->prepare('SELECT * FROM user WHERE email_user=:email_user');
+                            $select->execute(array(
+                                'email_user' => $email,
+                            ));
+                            $affiche=$select->fetch();
+
+
+                             $inserttopossede = $bdd->prepare('INSERT INTO possede(id_user,id_role)VALUES(:id_user, :id_role)');
+                             $inserttopossede->execute(array(
+                                'id_user' => $affiche['id_user'],
+                                'id_role' => 1
+                             ));
                            
 
                         header('location:../php/connexion?reg_err=success');

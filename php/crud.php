@@ -384,7 +384,7 @@ include '../include/bdd.php';
 								<td><?php echo $row['cp_user'] ?></td>
 								<td><?php echo $row['ddi_user'] ?></td>
 								<td><?php echo $row['nom_role'] ?></td>
-								<td><a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+								<td><a onclick="editemployermodal(event)" href="#editEmployeeModal" class="edit" data-toggle="modal" id='<?php echo $row['id_user'] ?>'><i class="material-icons" data-toggle="tooltip"  title="Edit">&#xE254;</i></a>
 									<a onclick="setDeleteId(event)" href="#deleteMembre" class="delete" id='<?php echo $row['id_user'] ?>'  data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
 								</td>
 							</tr>
@@ -411,7 +411,21 @@ include '../include/bdd.php';
 	<div id="editEmployeeModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form>
+				<?php
+			
+				// $sql="UPDATE user SET pseudo_user, nom_user, prenom_user, email_user, ddi_user, addresse_user, ville_user, cp_user";
+				// $edit= $bdd->prepare($sql);
+				// $edit->execute(array(
+				// 	'pseudo_user'=> $pseudo,
+				// 	'nom_user'=> $nom_user,
+				// 	'prenom_user'=> $prenom,
+				// 	'email_user'=> $ddi_user,
+				// 	'ddi_user'=> $addresse_user,
+				// 	'ville_user'=> $cp_user
+				// ));
+				if(!empty($_POST['update'])){
+?>
+				<form id="update">
 					<div class="modal-header">
 						<h4 class="modal-title">Edit Membre</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -449,16 +463,14 @@ include '../include/bdd.php';
 							<label>code postal</label>
 							<input typcodee="text" class="form-control" required>
 						</div>
-						<div class="form-group">
-							<label>role</label>
-							<input type="text" class="form-control" required>
-						</div>
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
 						<input type="submit" class="btn btn-info" value="Save">
 					</div>
 				</form>
+			<?php } ?>
+
 			</div>
 		</div>
 	</div>
