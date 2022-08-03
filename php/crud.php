@@ -410,8 +410,9 @@ include '../include/bdd.php';
 	<!-- Edit Modal HTML -->
 	<div id="editEmployeeModal" class="modal fade">
 		<div class="modal-dialog">
-			<div class="modal-content">
-				<?php
+
+
+					<?php
 			
 				// $sql="UPDATE user SET pseudo_user, nom_user, prenom_user, email_user, ddi_user, addresse_user, ville_user, cp_user";
 				// $edit= $bdd->prepare($sql);
@@ -423,8 +424,12 @@ include '../include/bdd.php';
 				// 	'ddi_user'=> $addresse_user,
 				// 	'ville_user'=> $cp_user
 				// ));
-				if(!empty($_POST['update'])){
+				// if(!empty($_POST['update'])){
+
+					
 ?>
+			<div class="modal-content">
+	
 				<form id="update">
 					<div class="modal-header">
 						<h4 class="modal-title">Edit Membre</h4>
@@ -469,9 +474,12 @@ include '../include/bdd.php';
 						<input type="submit" class="btn btn-info" value="Save">
 					</div>
 				</form>
-			<?php } ?>
+		
 
 			</div>
+				<?php
+		//  } 
+		 ?>
 		</div>
 	</div>
 	<!-- Delete Modal HTML -->
