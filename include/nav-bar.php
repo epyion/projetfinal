@@ -74,7 +74,7 @@ include 'include/bdd.php'
 
             if ($row["id_role"] == 2) {
             ?>
-            <li><a class="dropdown-item" href="php/crud-produit.php">Gestion des produit</a></li>
+            <li><a class="dropdown-item" href="php/crud_produit.php">Gestion des produit</a></li>
             <li><a class="dropdown-item" href="php/crud.php">Gestion des utilisateur</a></li>
 
             <?php } ?>

@@ -412,22 +412,6 @@ include '../include/bdd.php';
 		<div class="modal-dialog">
 
 
-					<?php
-			
-				// $sql="UPDATE user SET pseudo_user, nom_user, prenom_user, email_user, ddi_user, addresse_user, ville_user, cp_user";
-				// $edit= $bdd->prepare($sql);
-				// $edit->execute(array(
-				// 	'pseudo_user'=> $pseudo,
-				// 	'nom_user'=> $nom_user,
-				// 	'prenom_user'=> $prenom,
-				// 	'email_user'=> $ddi_user,
-				// 	'ddi_user'=> $addresse_user,
-				// 	'ville_user'=> $cp_user
-				// ));
-				// if(!empty($_POST['update'])){
-
-					
-?>
 			<div class="modal-content">
 	
 				<form id="update">
@@ -471,15 +455,12 @@ include '../include/bdd.php';
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-						<input type="submit" class="btn btn-info" value="Save">
+						<input type="submit" class="btn btn-info" value="Modifier">
 					</div>
 				</form>
 		
 
 			</div>
-				<?php
-		//  } 
-		 ?>
 		</div>
 	</div>
 	<!-- Delete Modal HTML -->
