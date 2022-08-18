@@ -19,12 +19,13 @@
     display: flex;
     /* justify-content: center;
     align-items: center; */
-    height: 800px;
-    background-color: black;
+    height: 400px;
+    background-image: url(../img/inscription-bann.png);
+    background-color: whitesmoke;
 
 
 }
-.one {
+/* .one {
     width: 50%;
     background-image: url(../img/boutique.jpg);
     background-repeat: no-repeat;
@@ -39,7 +40,7 @@
     background-position: center;
 
 
-}
+} */
 /* .three {
     width: 33%;
     background-image: url(../img/one-piece-bann.png);

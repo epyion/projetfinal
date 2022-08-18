@@ -78,8 +78,8 @@ include '../include/bdd.php';
                 <td><?php echo $article['image_produit'] ?></td>
                 <td><?php echo $article['prix_produit'] ?></td>
                 <td><?php echo $article['nom_categorie'] ?></td>
-                <td><a href="edit.php?=<?php echo $article['id_produit'] ?>" class="edit" data-toggle="modal" id='<?php echo $article['id_produit'] ?>'><i class="material-icons" data-toggle="tooltip"  title="Edit">&#xE254;</i></a>
-					<a href="delete.php?<?php echo $article['id_produit'] ?>" class="delete" id='<?php echo $article['id_produit'] ?>'  data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                <td><a href="edit.php?id_produit=<?php echo $article['id_produit'] ?>" class="edit" data-toggle="modal" id='<?php echo $article['id_produit'] ?>'><i class="material-icons" data-toggle="tooltip"  title="Edit">&#xE254;</i></a>
+					<a href="delete.php?id_produit=<?php echo $article['id_produit'] ?>" class="delete" id='<?php echo $article['id_produit'] ?>'  data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                 </td>
                
             </tr>

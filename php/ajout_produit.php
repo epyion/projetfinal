@@ -18,7 +18,10 @@ include '../include/bdd.php';
 <body>
 
 
+
 <?php
+
+
         $sqlcategorie = "SELECT * FROM categorie";
         $requetecategorie = $bdd->prepare($sqlcategorie);
         $requetecategorie->execute();

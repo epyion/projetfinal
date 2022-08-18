@@ -20,13 +20,13 @@ include '../include/bdd.php';
 
     if (isset($_GET['id_produit'])) {
 
-$sql = "DELETE FROM appartenir WHERE id_produit";
+$sql = "DELETE FROM appartenir WHERE id_produit=:id_produit";
 $requete = $bdd->prepare($sql);
 $result = $requete->execute(array(
     ':id_produit' => $_GET['id_produit']
 ));
 
-$sql = "DELETE FROM produit WHERE id_produit";
+$sql = "DELETE FROM produit WHERE id_produit=:id_produit";
 $requete = $bdd->prepare($sql);
 $result = $requete->execute(array(
     ':id_produit' => $_GET['id_produit']
