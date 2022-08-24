@@ -25,6 +25,70 @@
 
 
 }
+
+.produit{
+    display:flex;
+    border: 1px solid black;
+    margin-top: 50px;
+}
+.imgproduit {
+    width: 40%;
+}
+.infoproduit {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+
+}
+.nomproduit {
+    display: flex;
+    justify-content: center;
+    height: 20%;
+}
+.descriptionproduit {
+    display: flex;
+    justify-content: center;
+    height: 60%;
+}
+.prixproduit {
+    display: flex;
+    justify-content: center;
+    height: 10%;
+}
+.titrefigurines{
+    background-color: #e74c3c;
+}
+
+.goodies {
+    /* height: 100px;
+    background-color: blue; */
+}
+.titregoodies {
+    background-color: blue;
+}
+
+.grid-container {
+    height: 600px;
+    width: 100%;
+    display: grid;
+    grid-template-areas:
+        'zone zone zone'
+        'zone zone zone';
+
+        gap: 10px;
+}
+.grid-container > div {
+    text-align: center;
+    font: size 30px;
+}
+.zone {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+}
+.zone>img {
+    align-items: center;
+}
 /* .one {
     width: 50%;
     background-image: url(../img/boutique.jpg);
@@ -45,8 +109,9 @@
     width: 33%;
     background-image: url(../img/one-piece-bann.png);
 } */
-h1{
+H1{
     display: flex;
+    margin-top :10px;
     height: 90px;
     align-items: center;
     justify-content: center;

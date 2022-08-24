@@ -1,6 +1,5 @@
-
 <?php 
-include 'include/bdd.php'
+include 'bdd.php'
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -40,7 +39,7 @@ include 'include/bdd.php'
     <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
       <ul class="navbar-nav margin-left-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="site.php">Accueil</a>
+          <a class="nav-link active" aria-current="page" href="../site.php">Accueil</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Lien</a>
@@ -80,6 +79,7 @@ include 'include/bdd.php'
             <?php } ?>
             
             <li><a class="dropdown-item" href="#">Mon Panier</a></li>
+            <li><a class="dropdown-item" href="deconnexion.php">Deconnexion</a></li>
           </ul>
         </li>
         <li class="nav-item">
@@ -103,6 +103,7 @@ include 'include/bdd.php'
 
 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+    <script src="../javascript/bootstrap.js"></script>
     <script src="javascript/bootstrap.js"></script>
 </body>
 </html>

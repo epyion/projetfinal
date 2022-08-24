@@ -202,7 +202,7 @@ $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
         ));
 
 
-        $update
+        
         
         header('location:crud_produit.php');
 
