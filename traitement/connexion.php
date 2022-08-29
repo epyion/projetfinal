@@ -26,7 +26,7 @@
                     {
                     $_SESSION['user'] = $pseudo;
                     
-                    header('location:../site.php?login_err=success');
+                    header('location:../php/site.php?login_err=success');
                      }
                     else header('location:connexion.php?login_err=password');
             }

@@ -1,18 +1,6 @@
 <?php 
 include 'bdd.php'
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
-
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-
-    <title>Document</title>
 <?php 
     $sql = "SELECT * FROM user u, possede p, role r 
     WHERE  u.id_user=p.id_user 
@@ -24,8 +12,6 @@ include 'bdd.php'
             ));
             $row = $requete->fetch();
             ?>
-</head>
-<body>
     <div class="header">
     <nav class="navbar navbar-expand-lg bg-info">
   <div class="container-fluid">
@@ -68,18 +54,18 @@ include 'bdd.php'
   <?php } ?>
 
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="php/page_membre.php">Mon Espace</a></li>
+            <li><a class="dropdown-item" href="../php/page_membre.php">Mon Espace</a></li>
             <?php
 
             if ($row["id_role"] == 2) {
             ?>
-            <li><a class="dropdown-item" href="php/crud_produit.php">Gestion des produit</a></li>
-            <li><a class="dropdown-item" href="php/crud.php">Gestion des utilisateur</a></li>
+            <li><a class="dropdown-item" href="../php/crud_produit.php">Gestion des produit</a></li>
+            <li><a class="dropdown-item" href="../php/crud.php">Gestion des utilisateur</a></li>
 
             <?php } ?>
             
             <li><a class="dropdown-item" href="#">Mon Panier</a></li>
-            <li><a class="dropdown-item" href="deconnexion.php">Deconnexion</a></li>
+            <li><a class="dropdown-item" href="../deconnexion.php">Deconnexion</a></li>
           </ul>
         </li>
         <li class="nav-item">
@@ -97,13 +83,3 @@ include 'bdd.php'
 
 
     </div>
-
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
-    <script src="../javascript/bootstrap.js"></script>
-    <script src="javascript/bootstrap.js"></script>
-</body>
-</html>

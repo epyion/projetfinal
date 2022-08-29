@@ -25,7 +25,7 @@ include '../include/bdd.php';
 
 </head>
 <body>
-
+<?php include '../include/nav-bar.php' ?>
      <a href="ajout_produit.php"><button class="btn btn-danger">Nouveau produit</button></a>
      <a href="ajout_Categorie.php"><button class="btn btn-warning">Nouvel Categorie</button></a>
      <a href="ajout_univers.php"><button class="btn btn-success">Nouvel Univers</button></a>
@@ -55,12 +55,6 @@ include '../include/bdd.php';
 	    $sql = "SELECT * from produit p,appartenir a,categorie c
         WHERE p.id_produit=a.id_produit
         and a.id_categorie=c.id_categorie";
-
-        // $sql = "SELECT * from produit p, appartenir ap, categorie c
-        // WHERE p.id_produit=ap.id_produit
-        // AND ap.id_categorie=c.id_categorie
-// ";
-
 	    $produit = $bdd->prepare($sql);
 	    $produit->execute();
 

@@ -21,7 +21,7 @@
     align-items: center; */
     height: 400px;
     background-image: url(../img/inscription-bann.png);
-    background-color: whitesmoke;
+    background-color: #f5f5f5;
 
 
 }
@@ -57,6 +57,10 @@
 }
 .titrefigurines{
     background-color: #e74c3c;
+}
+
+.titrevetement {
+    background-color: aquamarine;
 }
 
 .goodies {
